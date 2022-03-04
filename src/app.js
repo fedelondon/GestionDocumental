@@ -2,8 +2,10 @@ import express from 'express';
 import morgan from 'morgan';
 import pkg from '../package.json';
 import authroutes from './routes/auth.routes';
+import { createRole } from './libs/initialSetup';
 
 const app = express();
+createRole();
 app.set('PORT', process.env.PORT || 8080);
 
 app.use(express.json());
